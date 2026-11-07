@@ -17,10 +17,10 @@ header{background:rgba(10,22,36,.88);backdrop-filter:blur(10px);color:#fff;posit
 header .w{display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{font-weight:800;font-size:1.35rem}.logo b{color:var(--sig)}nav a{margin-inline-start:22px;color:#c3d0de;font-size:.95rem;transition:color .2s}nav a:hover{color:var(--sig)}
 .hero{background:radial-gradient(ellipse at 25% 40%,#17406a 0,var(--ink) 62%);color:#fff;position:relative;overflow:hidden}
-.hero .w{display:grid;grid-template-columns:1fr 1.05fr;align-items:center;gap:10px;min-height:560px}
-.hero h1{font-size:clamp(2.1rem,5vw,3.5rem);font-weight:800;line-height:1.3}
-.hero p{color:#b4c4d6;max-width:470px;margin:16px 0 28px}
-#c3{width:100%;height:520px;display:block;touch-action:pan-y}
+.hero .w{padding-top:52px}.hc{text-align:center;max-width:760px;margin:auto}
+.hero h1{font-size:clamp(3.8rem,14vw,8.2rem);font-weight:800;line-height:1.1}.hero h1 b{color:var(--sig)}.hp{display:inline-block;direction:ltr;font-size:clamp(1.5rem,4vw,2.1rem);font-weight:800;letter-spacing:.04em;margin-top:6px}.hp:hover,.ha:hover{color:var(--sig)}.ha{display:block;color:#b4c4d6;margin-top:10px}.hb{margin-top:22px}
+.hero p{color:#b4c4d6;max-width:520px;margin:14px auto 0}
+#c3{width:100%;height:420px;display:block;touch-action:pan-y;margin-top:6px}
 .btn{display:inline-block;background:var(--sig);color:var(--ink);font-weight:800;padding:12px 28px;border-radius:10px;border:0;cursor:pointer;transition:transform .15s,box-shadow .2s}
 .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(242,182,50,.35)}
 .btn.o{background:transparent;color:#fff;border:1.5px solid #4a6a8c;margin-inline-start:10px}.btn.o:hover{box-shadow:none;border-color:var(--sig)}
@@ -45,13 +45,15 @@ dialog::backdrop{background:rgba(5,12,22,.72);backdrop-filter:blur(4px)}dialog[o
 .fm input,.fm select,.fm textarea{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #3b5470;background:#13263a;color:#fff}
 footer{background:var(--ink);color:#9fb0c2;text-align:center;padding:28px 0;font-size:.92rem}footer a{color:#cfdbe8}
 .fw{position:fixed;bottom:18px;left:18px;background:#25d366;color:#fff;border-radius:50px;padding:10px 22px;font-weight:800;z-index:15;box-shadow:0 6px 18px rgba(0,0,0,.25)}
-@media(max-width:760px){nav{display:none}.hero .w{grid-template-columns:1fr;min-height:0;padding-top:30px}#c3{height:340px}.dg,.fm{grid-template-columns:1fr}.dg .im{min-height:220px}.sv div{border-inline-start:0;border-top:1px solid var(--ln)}}
+@media(max-width:760px){nav{display:none}#c3{height:300px}.dg,.fm{grid-template-columns:1fr}.dg .im{min-height:220px}.sv div{border-inline-start:0;border-top:1px solid var(--ln)}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style></head><body>
 <header><div class="w"><a class="logo" href="#">خلود <b>سات</b></a><nav><a href="#services">الخدمات</a><a href="#products">المنتجات</a><a href="#request">اطلب خدمة</a><a href="#contact">تواصل</a></nav></div></header>
-<div class="hero"><div class="w"><div><h1>إشارة قوية وصورة واضحة من أول مرة</h1>
-<p>خلود سات لتركيب وضبط الدش، وبيع الريسيفرات والملحقات، وصيانة وتفعيل الاشتراكات. بنيجيلك لحد البيت.</p>
-<a class="btn" href="#products">شوف المنتجات</a><a class="btn o" href="#request">اطلب فني</a></div>
+<div class="hero"><div class="w"><div class="hc"><h1>خلود <b>سات</b></h1>
+<a class="hp" id="hph" href="#"></a>
+<p>تركيب وضبط وصيانة الدش، ريسيفرات وملحقات، وتفعيل الاشتراكات.</p>
+<a class="ha" id="had" target="_blank" rel="noopener" href="#"></a>
+<div class="hb"><a class="btn" href="#products">شوف المنتجات</a><a class="btn o" href="#request">اطلب فني</a></div></div>
 <canvas id="c3" aria-label="طبق دش ثلاثي الأبعاد" role="img"></canvas></div></div>
 <section id="services"><div class="w"><h2>خدماتنا</h2><p class="sub">كل اللي محتاجه لدش شغال من غير مشاكل.</p>
 <div class="sv"><div><h3>تركيب وضبط الدش</h3><p>تركيب أطباق وضبط الأقمار على أدق إشارة.</p></div><div><h3>ريسيفرات وملحقات</h3><p>ريسيفرات، LNB، كابلات ووصلات بضمان.</p></div><div><h3>صيانة وإصلاح</h3><p>حل مشاكل ضعف الإشارة والتقطيع وأعطال الأجهزة.</p></div><div><h3>تفعيل الاشتراكات</h3><p>تجديد وتفعيل اشتراكات القنوات والباقات.</p></div></div></div></section>
@@ -72,6 +74,7 @@ const $=id=>document.getElementById(id),C=window.CFG,esc=s=>String(s??"").replac
 const wl=t=>"https://wa.me/"+C.WHATSAPP+"?text="+encodeURIComponent(t);
 $("wa2").href=wl("السلام عليكم، عايز أستفسر عن خدمة من خلود سات");
 $("ph2").innerHTML='<a href="tel:'+C.PHONE+'">اتصل: '+C.PHONE+'</a>';$("ad").innerHTML='<a href="'+C.MAP+'" target="_blank" rel="noopener">موقعنا على الخريطة</a>';
+$("hph").href="tel:"+C.PHONE;$("hph").textContent=C.PHONE;$("had").href=C.MAP;$("had").textContent=C.ADDRESS||"اضغط هنا لعرض عنوان المحل على الخريطة";
 const ok=C.URL&&!C.URL.includes("YOUR-"),db=ok?supabase.createClient(C.URL,C.KEY):null;
 const PH='<svg viewBox="0 0 64 64" fill="none" stroke="#5d6b7a" stroke-width="3" stroke-linecap="round"><path d="M10 40a26 26 0 0 0 26-26"/><path d="M10 40c0 8 8 14 18 14M22 40l8 14M34 20l-6 6"/><circle cx="36" cy="14" r="3"/></svg>';
 const money=n=>Number(n)>0?Number(n).toLocaleString("en-US")+" ج.م":"اسأل عن السعر";
