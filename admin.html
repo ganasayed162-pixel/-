@@ -33,7 +33,7 @@ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&
 const fd=d=>new Date(d).toLocaleString("ar-EG",{dateStyle:"short",timeStyle:"short"});
 const ST=["جديد","جاري التواصل","تم التنفيذ","ملغي"];
 async function gate(){const{data:{session}}=await db.auth.getSession();$("login").hidden=!!session;$("app").hidden=!session;$("out").style.display=session?"":"none";if(session)all()}
-$("login").onsubmit=async e=>{e.preventDefault();const{error}=await db.auth.signInWithPassword({email:$("em").value,password:$("pw").value});$("le").textContent=error?"البريد أو كلمة المرور غير صحيحة.":"";gate()};
+$("login").onsubmit=async e=>{e.preventDefault();const{error}=await db.auth.signInWithPassword({email:$("em").value,password:$("pw").value});$("le").textContent=error?"تعذّر الدخول: "+error.message:"";gate()};
 $("out").onclick=async()=>{await db.auth.signOut();gate()};
 document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tabs button").forEach(x=>x.classList.toggle("on",x==b));["rq","pr","sl"].forEach(t=>$(t).hidden=t!=b.dataset.t)});
 const all=()=>{rq();pr();sl()};
