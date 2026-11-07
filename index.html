@@ -69,7 +69,7 @@ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&
 async function load(){if(!db){$("pg").textContent="اربط Supabase من ملف config.js لعرض المنتجات.";return}
 const{data,error}=await db.from("products").select("*").order("created_at",{ascending:false});
 if(error||!data.length){$("pg").textContent=error?"تعذّر تحميل المنتجات.":"لا توجد منتجات حالياً.";return}
-$("pg").innerHTML=data.map(p=>`<div class="p">${p.image_url?`<img src="${esc(p.image_url)}" alt="${esc(p.name)}" loading="lazy">`:'<div class="ph">بدون صورة</div>'}<div class="b"><small>${esc(p.category)}</small><h3 style="font-size:1rem">${esc(p.name)}</h3><span class="pr">${esc(p.price)} ج.م</span> ${p.in_stock?"":'<span class="out">· غير متوفر</span>'}</div></div>`).join("")}
+$("pg").innerHTML=data.map(p=>`<div class="p">${p.image_url?`<img src="${esc(p.image_url)}" alt="${esc(p.name)}" loading="lazy">`:'<div class="ph">بدون صورة</div>'}<div class="b"><small>${esc(p.category)}</small><h3 style="font-size:1rem">${esc(p.name)}</h3><span class="pr">${Number(p.price)>0?esc(p.price)+" ج.م":"اسأل عن السعر"}</span> ${p.in_stock?"":'<span class="out">· غير متوفر</span>'}</div></div>`).join("")}
 $("fm").onsubmit=async e=>{e.preventDefault();const m=$("msg");if(!db){m.textContent="النظام غير مربوط بعد.";return}
 const{error}=await db.from("requests").insert({name:$("n").value,phone:$("ph").value,service:$("s").value,address:$("a").value,notes:$("t").value});
 m.style.color=error?"#ff9b8a":"#6fe0b5";m.textContent=error?"تعذّر الإرسال، كلمنا على الواتساب.":"وصل طلبك، هنتواصل معاك قريب.";if(!error)e.target.reset()};
