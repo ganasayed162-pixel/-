@@ -8,70 +8,122 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"خلود سات","description":"تركيب وضبط الدش وبيع الريسيفرات والملحقات وصيانة وتفعيل الاشتراكات","telephone":"+201120274752","url":"https://ganasayed162-pixel.github.io/-/","hasMap":"https://maps.app.goo.gl/KyNRtHY4p7ZQ9pqVA","areaServed":"EG"}</script>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0d1b2a;--ink2:#1b2f45;--sig:#f2b632;--bg:#f5f7f9;--card:#fff;--tx:#1a2330;--mut:#5d6b7a;--ok:#1a8f6a}
-*{box-sizing:border-box;margin:0}body{font-family:Cairo,Tahoma,sans-serif;background:var(--bg);color:var(--tx);line-height:1.8}
-a{color:inherit;text-decoration:none}.w{max-width:1080px;margin:auto;padding:0 20px}
-header{background:var(--ink);color:#fff;position:sticky;top:0;z-index:5}
-header .w{display:flex;align-items:center;justify-content:space-between;height:62px}
-.logo{font-weight:800;font-size:1.3rem}.logo b{color:var(--sig)}
-nav a{margin-inline-start:20px;color:#c9d4e0;font-size:.95rem}nav a:hover{color:var(--sig)}
-.hero{background:var(--ink);color:#fff;overflow:hidden;position:relative;padding:70px 0 90px}
-.hero svg{position:absolute;left:-120px;top:-60px;width:560px;opacity:.9}
-.hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;line-height:1.3;max-width:600px;position:relative}
-.hero p{max-width:520px;color:#b8c6d6;margin:16px 0 28px;position:relative}
-.btn{display:inline-block;background:var(--sig);color:var(--ink);font-weight:800;padding:11px 26px;border-radius:8px;border:0;cursor:pointer;font:inherit;font-weight:800}
-.btn.o{background:transparent;color:#fff;border:1.5px solid #4a6280;margin-inline-start:10px}
-.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--sig);outline-offset:2px}
-section{padding:56px 0}h2{font-size:1.7rem;margin-bottom:6px}.sub{color:var(--mut);margin-bottom:26px}
-.sv{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border:1px solid #dde4ea;border-radius:10px;background:var(--card);overflow:hidden}
-.sv div{padding:22px;border-inline-start:1px solid #dde4ea}.sv div:first-child{border:0}.sv h3{font-size:1.05rem;margin-bottom:4px}.sv p{color:var(--mut);font-size:.92rem}
-.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
-.p{background:var(--card);border:1px solid #dde4ea;border-radius:10px;overflow:hidden}
-.p img,.p .ph{width:100%;height:150px;object-fit:cover;background:#e6ebf0;display:grid;place-items:center;color:#9aa8b6}
-.p .b{padding:14px}.p small{color:var(--mut)}.pr{font-weight:800;color:var(--ink2)}.out{color:#b3402f;font-size:.85rem}
-.fm{background:var(--ink);color:#fff;border-radius:12px;padding:30px;display:grid;gap:14px;grid-template-columns:1fr 1fr}
-.fm .f{grid-column:1/-1}label{font-size:.9rem;color:#c9d4e0;display:block}
-input,select,textarea{width:100%;padding:10px 12px;border-radius:8px;border:1px solid #3b5470;background:#13263a;color:#fff;font:inherit}
-#msg{grid-column:1/-1;font-weight:600}footer{background:var(--ink);color:#9fb0c2;text-align:center;padding:26px 0;font-size:.9rem}
-.wa{position:fixed;bottom:18px;left:18px;background:#25d366;color:#fff;border-radius:50px;padding:10px 20px;font-weight:800;z-index:6}
-@media(max-width:640px){.fm{grid-template-columns:1fr}nav{display:none}.hero svg{width:340px;left:-110px}.sv div{border-inline-start:0;border-top:1px solid #dde4ea}}
-@media(prefers-reduced-motion:no-preference){.arc{animation:p 3s ease-in-out infinite}.arc:nth-child(2){animation-delay:.5s}.arc:nth-child(3){animation-delay:1s}}
-@keyframes p{0%,100%{opacity:.25}50%{opacity:1}}
+:root{--ink:#0a1624;--ink2:#14283d;--sig:#f2b632;--bg:#f4f6f9;--tx:#18222f;--mut:#5d6b7a;--ln:#dde4ea}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{font-family:Cairo,Tahoma,sans-serif;background:var(--bg);color:var(--tx);line-height:1.8}
+a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.w{max-width:1100px;margin:auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--sig);outline-offset:2px}
+header{background:rgba(10,22,36,.88);backdrop-filter:blur(10px);color:#fff;position:sticky;top:0;z-index:20}
+header .w{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;font-size:1.35rem}.logo b{color:var(--sig)}nav a{margin-inline-start:22px;color:#c3d0de;font-size:.95rem;transition:color .2s}nav a:hover{color:var(--sig)}
+.hero{background:radial-gradient(ellipse at 25% 40%,#17406a 0,var(--ink) 62%);color:#fff;position:relative;overflow:hidden}
+.hero .w{display:grid;grid-template-columns:1fr 1.05fr;align-items:center;gap:10px;min-height:560px}
+.hero h1{font-size:clamp(2.1rem,5vw,3.5rem);font-weight:800;line-height:1.3}
+.hero p{color:#b4c4d6;max-width:470px;margin:16px 0 28px}
+#c3{width:100%;height:520px;display:block;touch-action:pan-y}
+.btn{display:inline-block;background:var(--sig);color:var(--ink);font-weight:800;padding:12px 28px;border-radius:10px;border:0;cursor:pointer;transition:transform .15s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(242,182,50,.35)}
+.btn.o{background:transparent;color:#fff;border:1.5px solid #4a6a8c;margin-inline-start:10px}.btn.o:hover{box-shadow:none;border-color:var(--sig)}
+section{padding:60px 0}h2{font-size:1.8rem;line-height:1.4}.sub{color:var(--mut);margin:4px 0 26px}
+.sv{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));background:#fff;border:1px solid var(--ln);border-radius:14px;overflow:hidden}
+.sv div{padding:24px;border-inline-start:1px solid var(--ln)}.sv div:first-child{border:0}.sv h3{font-size:1.05rem}.sv p{color:var(--mut);font-size:.92rem}
+.bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}.bar input{flex:1;min-width:200px;padding:10px 14px;border:1px solid var(--ln);border-radius:10px;background:#fff}
+.ch{padding:7px 18px;border-radius:30px;border:1px solid var(--ln);background:#fff;cursor:pointer;transition:all .2s}.ch.on,.ch:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
+.p{background:#fff;border:1px solid var(--ln);border-radius:14px;overflow:hidden;text-align:start;cursor:pointer;padding:0;transition:transform .25s,box-shadow .25s}
+.p:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(10,22,36,.12)}
+.im{aspect-ratio:1;background:#e9eef3;display:grid;place-items:center;overflow:hidden}.im img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.p:hover .im img{transform:scale(1.05)}.im svg{width:46%;opacity:.4}
+.p .b{padding:14px 16px}.p small{color:var(--mut)}.p h3{font-size:1rem;line-height:1.5;margin:2px 0}.pr{font-weight:800;color:#8a5f00}.out{color:#b3402f;font-size:.85rem}
+dialog{border:0;border-radius:18px;padding:0;width:min(860px,94vw);max-height:92vh;overflow:auto;color:var(--tx)}
+dialog::backdrop{background:rgba(5,12,22,.72);backdrop-filter:blur(4px)}dialog[open]{animation:op .3s ease}@keyframes op{from{opacity:0;transform:translateY(18px) scale(.97)}}
+.cl{position:absolute;top:10px;inset-inline-start:12px;width:38px;height:38px;border-radius:50%;border:0;background:#fff;font-size:1.5rem;cursor:pointer;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.dg{display:grid;grid-template-columns:1fr 1fr}.dg .im{aspect-ratio:auto;min-height:320px}.di{padding:28px}.di h3{font-size:1.4rem;line-height:1.5}.di .pr{font-size:1.5rem;display:block;margin:6px 0}
+.ds{color:var(--mut);white-space:pre-line;margin:8px 0 14px}
+.f{display:grid;gap:10px;margin-top:14px}.f input,.f textarea{padding:10px 12px;border:1px solid var(--ln);border-radius:10px;width:100%}.f .row{display:flex;gap:10px;flex-wrap:wrap}.f .btn{flex:1}
+.wa{background:#25d366;color:#fff;text-align:center}.ms{font-weight:600;min-height:1.6em}
+.fm{background:var(--ink);color:#fff;border-radius:16px;padding:30px;display:grid;gap:14px;grid-template-columns:1fr 1fr}.fm .f2{grid-column:1/-1}.fm label{font-size:.9rem;color:#c3d0de;display:block}
+.fm input,.fm select,.fm textarea{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #3b5470;background:#13263a;color:#fff}
+footer{background:var(--ink);color:#9fb0c2;text-align:center;padding:28px 0;font-size:.92rem}footer a{color:#cfdbe8}
+.fw{position:fixed;bottom:18px;left:18px;background:#25d366;color:#fff;border-radius:50px;padding:10px 22px;font-weight:800;z-index:15;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+@media(max-width:760px){nav{display:none}.hero .w{grid-template-columns:1fr;min-height:0;padding-top:30px}#c3{height:340px}.dg,.fm{grid-template-columns:1fr}.dg .im{min-height:220px}.sv div{border-inline-start:0;border-top:1px solid var(--ln)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style></head><body>
-<header><div class="w"><a class="logo" href="#">خلود <b>سات</b></a>
-<nav><a href="#services">الخدمات</a><a href="#products">المنتجات</a><a href="#request">اطلب خدمة</a><a href="#contact">تواصل</a></nav></div></header>
-<div class="hero"><svg viewBox="0 0 400 400" fill="none" stroke="#f2b632" stroke-width="6" stroke-linecap="round" aria-hidden="true">
-<path class="arc" d="M60 340a280 280 0 0 1 280-280"/><path class="arc" d="M60 340a200 200 0 0 1 200-200" /><path class="arc" d="M60 340a120 120 0 0 1 120-120"/><circle cx="60" cy="340" r="14" fill="#f2b632"/></svg>
-<div class="w"><h1>إشارة قوية وصورة واضحة من أول مرة</h1>
+<header><div class="w"><a class="logo" href="#">خلود <b>سات</b></a><nav><a href="#services">الخدمات</a><a href="#products">المنتجات</a><a href="#request">اطلب خدمة</a><a href="#contact">تواصل</a></nav></div></header>
+<div class="hero"><div class="w"><div><h1>إشارة قوية وصورة واضحة من أول مرة</h1>
 <p>خلود سات لتركيب وضبط الدش، وبيع الريسيفرات والملحقات، وصيانة وتفعيل الاشتراكات. بنيجيلك لحد البيت.</p>
-<a class="btn" href="#request">اطلب فني</a><a class="btn o" id="wa1" href="#">واتساب</a></div></div>
+<a class="btn" href="#products">شوف المنتجات</a><a class="btn o" href="#request">اطلب فني</a></div>
+<canvas id="c3" aria-label="طبق دش ثلاثي الأبعاد" role="img"></canvas></div></div>
 <section id="services"><div class="w"><h2>خدماتنا</h2><p class="sub">كل اللي محتاجه لدش شغال من غير مشاكل.</p>
-<div class="sv"><div><h3>تركيب وضبط الدش</h3><p>تركيب أطباق وضبط الأقمار على أدق إشارة.</p></div>
-<div><h3>ريسيفرات وملحقات</h3><p>ريسيفرات، LNB، كابلات ووصلات بضمان.</p></div>
-<div><h3>صيانة وإصلاح</h3><p>حل مشاكل ضعف الإشارة والتقطيع وأعطال الأجهزة.</p></div>
-<div><h3>تفعيل الاشتراكات</h3><p>تجديد وتفعيل اشتراكات القنوات والباقات.</p></div></div></div></section>
-<section id="products" style="padding-top:0"><div class="w"><h2>المنتجات</h2><p class="sub">الأسعار والتوافر بيتحدّثوا من المحل مباشرة.</p><div class="pg" id="pg">جاري التحميل…</div></div></section>
+<div class="sv"><div><h3>تركيب وضبط الدش</h3><p>تركيب أطباق وضبط الأقمار على أدق إشارة.</p></div><div><h3>ريسيفرات وملحقات</h3><p>ريسيفرات، LNB، كابلات ووصلات بضمان.</p></div><div><h3>صيانة وإصلاح</h3><p>حل مشاكل ضعف الإشارة والتقطيع وأعطال الأجهزة.</p></div><div><h3>تفعيل الاشتراكات</h3><p>تجديد وتفعيل اشتراكات القنوات والباقات.</p></div></div></div></section>
+<section id="products" style="padding-top:0"><div class="w"><h2>المنتجات</h2><p class="sub">اضغط على أي منتج لتشوف تفاصيله وتطلبه.</p>
+<div class="bar"><input id="q" type="search" placeholder="ابحث عن منتج…" aria-label="بحث"><div id="chs" class="bar" style="margin:0"></div></div><div class="pg" id="pg">جاري التحميل…</div></div></section>
 <section id="request" style="padding-top:0"><div class="w"><h2>اطلب خدمة</h2><p class="sub">سيب بياناتك وهنكلمك في أقرب وقت.</p>
 <form class="fm" id="fm"><div><label for="n">الاسم</label><input id="n" required></div><div><label for="ph">رقم الموبايل</label><input id="ph" type="tel" required></div>
-<div><label for="s">الخدمة</label><select id="s"><option>تركيب دش جديد</option><option>صيانة / ضعف إشارة</option><option>شراء ريسيفر</option><option>تفعيل اشتراك</option><option>أخرى</option></select></div>
-<div><label for="a">العنوان</label><input id="a"></div><div class="f"><label for="t">ملاحظات</label><textarea id="t" rows="3"></textarea></div>
-<div class="f"><button class="btn" type="submit">إرسال الطلب</button></div><div id="msg" role="status"></div></form></div></section>
+<div><label for="s">الخدمة</label><select id="s"><option>تركيب دش جديد</option><option>صيانة / ضعف إشارة</option><option>شراء ريسيفر</option><option>تفعيل اشتراك</option><option>أخرى</option></select></div><div><label for="a">العنوان</label><input id="a"></div>
+<div class="f2"><label for="t">ملاحظات</label><textarea id="t" rows="3"></textarea></div><div class="f2"><button class="btn" type="submit">إرسال الطلب</button></div><div id="msg" class="f2 ms" role="status"></div></form></div></section>
 <footer id="contact"><div class="w"><p>خلود سات · <span id="ph2"></span> · <span id="ad"></span></p><p style="margin-top:6px"><a href="admin.html">دخول الإدارة</a></p></div></footer>
-<a class="wa" id="wa2" href="#">واتساب</a>
+<a class="fw" id="wa2" href="#">واتساب</a>
+<dialog id="dlg"><button class="cl" id="dx" aria-label="إغلاق">×</button><div id="dc"></div></dialog>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
 <script src="config.js"></script>
 <script>
-const $=id=>document.getElementById(id),C=window.CFG;
-const wl="https://wa.me/"+C.WHATSAPP+"?text="+encodeURIComponent("السلام عليكم، عايز أستفسر عن خدمة من خلود سات");
-$("wa1").href=$("wa2").href=wl;$("ph2").innerHTML='<a href="tel:'+C.PHONE+'">اتصل: '+C.PHONE+'</a>';$("ad").innerHTML='<a href="'+C.MAP+'" target="_blank" rel="noopener">موقعنا على الخريطة</a>';
+const $=id=>document.getElementById(id),C=window.CFG,esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const wl=t=>"https://wa.me/"+C.WHATSAPP+"?text="+encodeURIComponent(t);
+$("wa2").href=wl("السلام عليكم، عايز أستفسر عن خدمة من خلود سات");
+$("ph2").innerHTML='<a href="tel:'+C.PHONE+'">اتصل: '+C.PHONE+'</a>';$("ad").innerHTML='<a href="'+C.MAP+'" target="_blank" rel="noopener">موقعنا على الخريطة</a>';
 const ok=C.URL&&!C.URL.includes("YOUR-"),db=ok?supabase.createClient(C.URL,C.KEY):null;
-const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const PH='<svg viewBox="0 0 64 64" fill="none" stroke="#5d6b7a" stroke-width="3" stroke-linecap="round"><path d="M10 40a26 26 0 0 0 26-26"/><path d="M10 40c0 8 8 14 18 14M22 40l8 14M34 20l-6 6"/><circle cx="36" cy="14" r="3"/></svg>';
+const money=n=>Number(n)>0?Number(n).toLocaleString("en-US")+" ج.م":"اسأل عن السعر";
+let PR=[],cat="الكل",qs="";
 async function load(){if(!db){$("pg").textContent="اربط Supabase من ملف config.js لعرض المنتجات.";return}
 const{data,error}=await db.from("products").select("*").order("created_at",{ascending:false});
-if(error||!data.length){$("pg").textContent=error?"تعذّر تحميل المنتجات.":"لا توجد منتجات حالياً.";return}
-$("pg").innerHTML=data.map(p=>`<div class="p">${p.image_url?`<img src="${esc(p.image_url)}" alt="${esc(p.name)}" loading="lazy">`:'<div class="ph">بدون صورة</div>'}<div class="b"><small>${esc(p.category)}</small><h3 style="font-size:1rem">${esc(p.name)}</h3><span class="pr">${Number(p.price)>0?esc(p.price)+" ج.م":"اسأل عن السعر"}</span> ${p.in_stock?"":'<span class="out">· غير متوفر</span>'}</div></div>`).join("")}
+if(error){$("pg").textContent="تعذّر تحميل المنتجات.";return}PR=data;draw()}
+function draw(){const cs=["الكل",...new Set(PR.map(p=>p.category).filter(Boolean))];
+$("chs").innerHTML=cs.map(c=>`<button class="ch${c==cat?" on":""}" data-c="${esc(c)}">${esc(c)}</button>`).join("");
+const L=PR.map((p,i)=>[p,i]).filter(([p])=>(cat=="الكل"||p.category==cat)&&(!qs||(p.name+" "+p.category).toLowerCase().includes(qs)));
+$("pg").innerHTML=L.length?L.map(([p,i])=>`<button class="p" data-i="${i}"><div class="im">${p.image_url?`<img src="${esc(p.image_url)}" alt="${esc(p.name)}" loading="lazy">`:PH}</div><div class="b"><small>${esc(p.category)}</small><h3>${esc(p.name)}</h3><span class="pr">${money(p.price)}</span> ${p.in_stock?"":'<span class="out">· غير متوفر</span>'}</div></button>`).join(""):"لا توجد منتجات مطابقة.";}
+$("chs").onclick=e=>{const b=e.target.closest(".ch");if(b){cat=b.dataset.c;draw()}};
+$("q").oninput=e=>{qs=e.target.value.trim().toLowerCase();draw()};
+$("pg").onclick=e=>{const b=e.target.closest(".p");if(b)openP(PR[b.dataset.i])};
+function openP(p){const msg="مرحباً خلود سات، عايز أطلب: "+p.name+(Number(p.price)>0?" بسعر "+p.price+" ج.م":"");
+$("dc").innerHTML=`<div class="dg"><div class="im">${p.image_url?`<img src="${esc(p.image_url)}" alt="${esc(p.name)}">`:PH}</div><div class="di"><small>${esc(p.category)}</small><h3>${esc(p.name)}</h3><span class="pr">${money(p.price)}</span><div>${p.in_stock?'<span style="color:#16a37a;font-weight:600">متوفر</span>':'<span class="out">غير متوفر حالياً</span>'}</div>${p.description?`<p class="ds">${esc(p.description)}</p>`:'<p class="ds">اسأل عن المواصفات والضمان وطريقة التركيب.</p>'}
+<form class="f" id="of"><input id="on" placeholder="الاسم" required><input id="op" type="tel" placeholder="رقم الموبايل" required><input id="oa" placeholder="العنوان (اختياري)"><div class="row"><button class="btn">اطلب الآن</button><a class="btn wa" target="_blank" rel="noopener" href="${wl(msg)}">اطلب واتساب</a></div><div class="ms" id="om" role="status"></div></form></div></div>`;
+$("of").onsubmit=async e=>{e.preventDefault();const m=$("om");m.style.color="#5d6b7a";m.textContent="جاري الإرسال…";
+const{error}=await db.from("requests").insert({name:$("on").value,phone:$("op").value,address:$("oa").value,service:"طلب منتج: "+p.name,notes:"السعر: "+money(p.price)});
+m.style.color=error?"#b3402f":"#16a37a";m.textContent=error?"تعذّر الإرسال، اطلب من الواتساب.":"وصل طلبك، هنتواصل معاك قريب.";if(!error)e.target.reset()};
+$("dlg").showModal()}
+$("dx").onclick=()=>$("dlg").close();$("dlg").onclick=e=>{if(e.target==$("dlg"))$("dlg").close()};
 $("fm").onsubmit=async e=>{e.preventDefault();const m=$("msg");if(!db){m.textContent="النظام غير مربوط بعد.";return}
 const{error}=await db.from("requests").insert({name:$("n").value,phone:$("ph").value,service:$("s").value,address:$("a").value,notes:$("t").value});
 m.style.color=error?"#ff9b8a":"#6fe0b5";m.textContent=error?"تعذّر الإرسال، كلمنا على الواتساب.":"وصل طلبك، هنتواصل معاك قريب.";if(!error)e.target.reset()};
 load();
+// ===== طبق الدش ثلاثي الأبعاد =====
+(function(){const cv=$("c3");if(!window.THREE)return;let R;try{R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true})}catch(e){cv.style.display="none";return}
+const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(38,1,.1,200);cam.position.set(0,1,14);
+sc.add(new THREE.AmbientLight(0xffffff,.6));const dl=new THREE.DirectionalLight(0xffffff,1.1);dl.position.set(5,8,7);sc.add(dl);
+const pl=new THREE.PointLight(0xf2b632,1.4,14);pl.position.set(0,2,4);sc.add(pl);
+const white=new THREE.MeshStandardMaterial({color:0xeef2f6,metalness:.55,roughness:.32,side:THREE.DoubleSide}),grey=new THREE.MeshStandardMaterial({color:0x8a9bb0,metalness:.7,roughness:.4}),amb=new THREE.MeshStandardMaterial({color:0xf2b632,emissive:0xf2b632,emissiveIntensity:.6});
+const root=new THREE.Group();root.position.y=1.1;sc.add(root);
+const pole=new THREE.Mesh(new THREE.CylinderGeometry(.14,.2,4.2,20),grey);pole.position.y=-2.1;root.add(pole);
+const base=new THREE.Mesh(new THREE.CylinderGeometry(.9,1,.18,32),grey);base.position.y=-4.2;root.add(base);
+const piv=new THREE.Group();root.add(piv);piv.add(new THREE.Mesh(new THREE.SphereGeometry(.24,20,16),grey));
+const dish=new THREE.Group();dish.rotation.x=1.15;piv.add(dish);
+const Rr=3,th=Math.PI*.25;const cap=new THREE.Mesh(new THREE.SphereGeometry(Rr,72,28,0,Math.PI*2,Math.PI-th,th),white);cap.position.y=Rr;dish.add(cap);
+const rim=new THREE.Mesh(new THREE.TorusGeometry(Rr*Math.sin(th),.05,10,80),white);rim.rotation.x=Math.PI/2;rim.position.y=Rr-Rr*Math.cos(th);dish.add(rim);
+const boom=new THREE.Mesh(new THREE.CylinderGeometry(.04,.04,1.5,10),grey);boom.position.y=.75;dish.add(boom);
+const lnb=new THREE.Mesh(new THREE.CylinderGeometry(.1,.15,.42,18),amb);lnb.position.y=1.55;dish.add(lnb);
+const rings=[0,1,2].map(()=>{const m=new THREE.Mesh(new THREE.RingGeometry(.9,.97,72),new THREE.MeshBasicMaterial({color:0xf2b632,transparent:true,side:THREE.DoubleSide,depthWrite:false}));m.rotation.x=-Math.PI/2;dish.add(m);return m});
+const N=420,pos=new Float32Array(N*3);for(let i=0;i<N;i++){const r=40+Math.random()*40,a=Math.random()*6.283,b=Math.acos(2*Math.random()-1);pos[i*3]=r*Math.sin(b)*Math.cos(a);pos[i*3+1]=r*Math.sin(b)*Math.sin(a);pos[i*3+2]=-Math.abs(r*Math.cos(b))-5}
+const sg=new THREE.BufferGeometry();sg.setAttribute("position",new THREE.BufferAttribute(pos,3));const stars=new THREE.Points(sg,new THREE.PointsMaterial({color:0xffffff,size:.22,transparent:true,opacity:.7}));sc.add(stars);
+const mm={x:0,y:0};addEventListener("pointermove",e=>{mm.x=e.clientX/innerWidth-.5;mm.y=e.clientY/innerHeight-.5});
+function size(){const w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;R.setPixelRatio(Math.min(devicePixelRatio||1,2));R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+addEventListener("resize",size);size();
+let vis=true;if("IntersectionObserver"in window)new IntersectionObserver(a=>vis=a[0].isIntersecting).observe(cv);
+const still=matchMedia("(prefers-reduced-motion:reduce)").matches;let ry=-.5;
+function frame(ms){const t=ms/1000;if(!still)requestAnimationFrame(frame);if(!vis&&!still)return;
+const ty=-.45+mm.x*.9+Math.sin(t*.35)*.22;ry+=(ty-ry)*.05;piv.rotation.y=ry;dish.rotation.x=1.15+mm.y*.35;
+rings.forEach((m,i)=>{const p=((t*.22+i/3)%1);m.position.y=1.6+(1-p)*7.5;const s=.5+(1-p)*2.4;m.scale.set(s,s,1);m.material.opacity=Math.sin(Math.PI*p)*.85});
+amb.emissiveIntensity=.6+Math.sin(t*3)*.25;stars.rotation.z=t*.004;R.render(sc,cam)}
+requestAnimationFrame(frame)})();
 </script></body></html>
