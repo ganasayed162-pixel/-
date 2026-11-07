@@ -60,7 +60,7 @@ input,select,textarea{width:100%;padding:10px 12px;border-radius:8px;border:1px 
 <script>
 const $=id=>document.getElementById(id),C=window.CFG;
 const wl="https://wa.me/"+C.WHATSAPP+"?text="+encodeURIComponent("السلام عليكم، عايز أستفسر عن خدمة من خلود سات");
-$("wa1").href=$("wa2").href=wl;$("ph2").textContent=C.PHONE;$("ad").textContent=C.ADDRESS;
+$("wa1").href=$("wa2").href=wl;$("ph2").innerHTML='<a href="tel:'+C.PHONE+'">اتصل: '+C.PHONE+'</a>';$("ad").innerHTML='<a href="'+C.MAP+'" target="_blank" rel="noopener">موقعنا على الخريطة</a>';
 const ok=C.URL&&!C.URL.includes("YOUR-"),db=ok?supabase.createClient(C.URL,C.KEY):null;
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 async function load(){if(!db){$("pg").textContent="اربط Supabase من ملف config.js لعرض المنتجات.";return}

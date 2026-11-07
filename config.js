@@ -1,8 +1,8 @@
-// عدّل هذه القيم فقط (من Supabase > Project Settings > API)
+// عدّل قيم Supabase فقط (Project Settings > API)
 window.CFG = {
   URL: "https://YOUR-PROJECT.supabase.co",
   KEY: "YOUR-ANON-PUBLIC-KEY",
-  WHATSAPP: "201000000000", // رقم الواتساب بكود الدولة بدون +
-  PHONE: "01000000000",
-  ADDRESS: "اكتب عنوان المحل هنا"
+  WHATSAPP: "201120274752",
+  PHONE: "01120274752",
+  MAP: "https://maps.app.goo.gl/KyNRtHY4p7ZQ9pqVA"
 };
