@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>لوحة تحكم خلود سات</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0d1b2a;--sig:#f2b632;--bg:#f5f7f9;--mut:#5d6b7a}
+*{box-sizing:border-box;margin:0}body{font-family:Cairo,Tahoma,sans-serif;background:var(--bg);color:#1a2330}
+.top{background:var(--ink);color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:center}.top b{color:var(--sig)}
+.w{max-width:1000px;margin:20px auto;padding:0 16px}
+.tabs{display:flex;gap:8px;margin-bottom:16px}.tabs button{padding:8px 20px;border:1px solid #cdd6df;background:#fff;border-radius:8px;font:inherit;cursor:pointer}
+.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.box{background:#fff;border:1px solid #dde4ea;border-radius:10px;padding:16px;margin-bottom:16px;overflow-x:auto}
+input,select{padding:8px 10px;border:1px solid #cdd6df;border-radius:8px;font:inherit}
+button.b{background:var(--sig);border:0;padding:9px 20px;border-radius:8px;font:inherit;font-weight:800;cursor:pointer}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--sig)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:start;padding:8px;border-bottom:1px solid #eef1f4;white-space:nowrap}th{color:var(--mut);font-weight:600}
+.x{color:#b3402f;background:none;border:0;cursor:pointer;font:inherit}.tot{font-size:1.3rem;font-weight:800}
+#login{max-width:340px;margin:80px auto;display:grid;gap:10px}
+</style></head><body>
+<div class="top"><div>خلود <b>سات</b> · لوحة التحكم</div><button class="x" id="out" style="color:#fff;display:none">خروج</button></div>
+<form id="login" class="box"><h2>تسجيل الدخول</h2><input id="em" type="email" placeholder="البريد" required><input id="pw" type="password" placeholder="كلمة المرور" required><button class="b">دخول</button><div id="le" role="alert" style="color:#b3402f"></div></form>
+<div class="w" id="app" hidden>
+<div class="tabs"><button data-t="rq" class="on">الطلبات</button><button data-t="pr">المنتجات</button><button data-t="sl">المبيعات</button></div>
+<div id="rq" class="box"></div>
+<div id="pr" hidden><form class="box row" id="pf"><input id="pn" placeholder="اسم المنتج" required><input id="pc" placeholder="القسم" value="ريسيفر"><input id="pp" type="number" step="0.01" placeholder="السعر" required><input id="pi" placeholder="رابط الصورة"><label><input type="checkbox" id="ps" checked> متوفر</label><button class="b">إضافة منتج</button></form><div class="box" id="pl"></div></div>
+<div id="sl" hidden><form class="box row" id="sf"><input id="sc" placeholder="اسم العميل"><input id="si" placeholder="الصنف / الخدمة" required><input id="sa" type="number" step="0.01" placeholder="المبلغ" required><button class="b">تسجيل بيعة</button></form><div class="box"><span>إجمالي اليوم: </span><span class="tot" id="td">0</span> ج.م</div><div class="box" id="slist"></div></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script><script src="config.js"></script>
+<script>
+const $=i=>document.getElementById(i),db=supabase.createClient(CFG.URL,CFG.KEY);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fd=d=>new Date(d).toLocaleString("ar-EG",{dateStyle:"short",timeStyle:"short"});
+const ST=["جديد","جاري التواصل","تم التنفيذ","ملغي"];
+async function gate(){const{data:{session}}=await db.auth.getSession();$("login").hidden=!!session;$("app").hidden=!session;$("out").style.display=session?"":"none";if(session)all()}
+$("login").onsubmit=async e=>{e.preventDefault();const{error}=await db.auth.signInWithPassword({email:$("em").value,password:$("pw").value});$("le").textContent=error?"البريد أو كلمة المرور غير صحيحة.":"";gate()};
+$("out").onclick=async()=>{await db.auth.signOut();gate()};
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tabs button").forEach(x=>x.classList.toggle("on",x==b));["rq","pr","sl"].forEach(t=>$(t).hidden=t!=b.dataset.t)});
+const all=()=>{rq();pr();sl()};
+async function rq(){const{data}=await db.from("requests").select("*").order("created_at",{ascending:false});
+$("rq").innerHTML=data?.length?`<table><tr><th>التاريخ</th><th>الاسم</th><th>الموبايل</th><th>الخدمة</th><th>العنوان</th><th>ملاحظات</th><th>الحالة</th></tr>${data.map(r=>`<tr><td>${fd(r.created_at)}</td><td>${esc(r.name)}</td><td><a href="tel:${esc(r.phone)}">${esc(r.phone)}</a></td><td>${esc(r.service)}</td><td>${esc(r.address)}</td><td>${esc(r.notes)}</td><td><select onchange="us('${r.id}',this.value)">${ST.map(s=>`<option ${s==r.status?"selected":""}>${s}</option>`).join("")}</select></td></tr>`).join("")}</table>`:"لا توجد طلبات بعد."}
+window.us=async(id,s)=>{await db.from("requests").update({status:s}).eq("id",id)};
+async function pr(){const{data}=await db.from("products").select("*").order("created_at",{ascending:false});
+$("pl").innerHTML=data?.length?`<table><tr><th>المنتج</th><th>القسم</th><th>السعر</th><th>متوفر</th><th></th></tr>${data.map(p=>`<tr><td>${esc(p.name)}</td><td>${esc(p.category)}</td><td>${esc(p.price)}</td><td><input type="checkbox" ${p.in_stock?"checked":""} onchange="ut('${p.id}',this.checked)"></td><td><button class="x" onclick="del('products','${p.id}',pr)">حذف</button></td></tr>`).join("")}</table>`:"أضف أول منتج من الأعلى."}
+window.ut=async(id,v)=>{await db.from("products").update({in_stock:v}).eq("id",id)};
+window.del=async(t,id,f)=>{if(confirm("تأكيد الحذف؟")){await db.from(t).delete().eq("id",id);f()}};
+$("pf").onsubmit=async e=>{e.preventDefault();await db.from("products").insert({name:$("pn").value,category:$("pc").value,price:$("pp").value,image_url:$("pi").value||null,in_stock:$("ps").checked});e.target.reset();pr()};
+async function sl(){const{data}=await db.from("sales").select("*").order("created_at",{ascending:false}).limit(200);const t=new Date().toDateString();
+$("td").textContent=(data||[]).filter(s=>new Date(s.created_at).toDateString()==t).reduce((a,s)=>a+Number(s.amount),0);
+$("slist").innerHTML=data?.length?`<table><tr><th>التاريخ</th><th>العميل</th><th>الصنف</th><th>المبلغ</th><th></th></tr>${data.map(s=>`<tr><td>${fd(s.created_at)}</td><td>${esc(s.customer)}</td><td>${esc(s.item)}</td><td>${esc(s.amount)}</td><td><button class="x" onclick="del('sales','${s.id}',sl)">حذف</button></td></tr>`).join("")}</table>`:"لا توجد مبيعات مسجلة."}
+$("sf").onsubmit=async e=>{e.preventDefault();await db.from("sales").insert({customer:$("sc").value,item:$("si").value,amount:$("sa").value});e.target.reset();sl()};
+gate();
+</script></body></html>
